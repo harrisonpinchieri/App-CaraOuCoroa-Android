@@ -10,6 +10,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+    
     private ImageView botaoJogar;
     private String[]  opcao={"cara","coroa"};
 
@@ -17,7 +18,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+   
+    getSupportActionBar().hide();
+        
     botaoJogar = findViewById(R.id.botaoJogarId);
 
 
@@ -32,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
                 int numeroAleatorio = randomico.nextInt(2);
 
                 //0 cara - 1 coroa
-
+             
+                //envia os dados do MainActivitiy para DetalheActivity
                 Intent intent = new Intent(MainActivity.this,DetalheActivity.class);
                 intent.putExtra("opcao",opcao[numeroAleatorio]);
 
@@ -42,14 +46,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
-
-
-
-     getSupportActionBar().hide();
+   
     }
 }
